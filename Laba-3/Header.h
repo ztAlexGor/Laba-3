@@ -8,6 +8,9 @@ private:
 		int data;
 		node* next;
 	}* nodePtr;
+	nodePtr head;
+	nodePtr temp;
+	nodePtr curr;
 public:
 	Link();
 	void AddNode(int NewNode);
