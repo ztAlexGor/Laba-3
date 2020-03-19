@@ -37,6 +37,18 @@ void List::DeleteNode(int DelData) {
 		delPtr = curr;
 		curr = curr->next;
 		temp->next = curr;
+		if (delPtr == head) {
+			head = head->next;
+			temp = NULL;
+		}
 		delete delPtr;
 	}
+}
+void List::Print() {
+	curr = head;
+	while (curr != NULL) {
+		cout << curr->data << " ";
+		curr = curr->next;
+	}
+	cout << endl;
 }
