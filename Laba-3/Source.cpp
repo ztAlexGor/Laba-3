@@ -1,11 +1,11 @@
 #include "Header.h"
 
-Link::Link() {
+List::List() {
 	head = NULL;
 	curr = NULL;
 	temp = NULL;
 }
-void Link::AddNode(int NewData) {
+void List::AddNode(int NewData) {
 	nodePtr n = new node;
 	n->data = NewData;
 	n->next = NULL;
@@ -18,5 +18,25 @@ void Link::AddNode(int NewData) {
 	}
 	else {
 		head = n;
+	}
+}
+
+void List::DeleteNode(int DelData) {
+	nodePtr delPtr = NULL;
+	curr = head;
+	temp = head;
+	while (curr != NULL && curr->data != DelData) {
+		temp = curr;
+		curr = curr->next;
+	}
+	if (curr == NULL) {
+		cout << DelData << " was not in the list\n";
+		delete delPtr;
+	}
+	else {
+		delPtr = curr;
+		curr = curr->next;
+		temp->next = curr;
+		delete delPtr;
 	}
 }

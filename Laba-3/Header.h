@@ -2,7 +2,7 @@
 #include <cstdlib>
 using namespace std;
 
-class Link {
+class List {
 private:
 	typedef struct node {
 		int data;
@@ -12,7 +12,7 @@ private:
 	nodePtr temp;
 	nodePtr curr;
 public:
-	Link();
+	List();
 	void AddNode(int NewNode);
 	void DeleteNode(int DelData);
 	void Print();
