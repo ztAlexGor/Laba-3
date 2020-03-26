@@ -43,15 +43,28 @@ void List::Print() {
     }
     cout << endl;
 }
+bool List::isEmpty() {
+    if (head == NULL) {
+        return 1;
+    }
+    else return 0;
+}
+nodePtr List::LastElement() {
+    curr = head;
+    while (curr->next != NULL) {
+        curr = curr->next;
+    }
+    return curr;
+}
 
 Hash::Hash(int Size) {
     size = Size;
     A = new List[size];
 }
-void List::AddElement(string NewWord, string NewMean) {
+void Hash::AddElement(string NewWord, string NewMean) {
     int key = HashKey(NewWord);
     A[key].AddNode(NewWord, NewMean);
-    score = 0;
+    score++;
 }
 
 Hash::HashKey(string word) {
