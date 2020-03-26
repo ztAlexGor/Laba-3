@@ -5,7 +5,8 @@ using namespace std;
 class List {
 private:
 	typedef struct node {
-		int data;
+		string word;
+		string data;
 		node* next;
 	}* nodePtr;
 	nodePtr head;
@@ -13,7 +14,7 @@ private:
 	nodePtr curr;
 public:
 	List();
-	void AddNode(int NewNode);
-	void DeleteNode(int DelData);
+	void AddNode(string newWord, string NewData);
+	void DeleteNode(string DelData);
 	void Print();
 };
