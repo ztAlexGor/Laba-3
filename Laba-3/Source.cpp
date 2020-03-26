@@ -5,32 +5,23 @@ List::List() {
 	curr = NULL;
 	temp = NULL;
 }
-void List::AddNode(int NewData) {
+void List::AddNode(string newWord, string NewData) {
 	nodePtr n = new node;
+	n->word = newWord;
 	n->data = NewData;
-	n->next = NULL;
-	if (head != NULL) {
-		curr = head;
-		while (curr->next != NULL) {
-			curr = curr->next;
-		}
-		curr->next = n;
-	}
-	else {
-		head = n;
-	}
+	n->next = head;
+	head = n;
 }
-
-void List::DeleteNode(int DelData) {
+void List::DeleteNode(string DelWord) {
 	nodePtr delPtr = NULL;
 	curr = head;
 	temp = head;
-	while (curr != NULL && curr->data != DelData) {
+	while (curr != NULL && curr->data != DelWord) {
 		temp = curr;
 		curr = curr->next;
 	}
 	if (curr == NULL) {
-		cout << DelData << " was not in the list\n";
+		cout << DelWord << " was not in the list\n";
 		delete delPtr;
 	}
 	else {
@@ -47,7 +38,7 @@ void List::DeleteNode(int DelData) {
 void List::Print() {
 	curr = head;
 	while (curr != NULL) {
-		cout << curr->data << " ";
+		cout << curr->word << " " << curr->data<<endl;
 		curr = curr->next;
 	}
 	cout << endl;
