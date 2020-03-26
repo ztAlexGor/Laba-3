@@ -44,11 +44,24 @@ void List::Print() {
     cout << endl;
 }
 
-Hash::Hash(int Size) {
+Hash::Hash(int Size, string Word) {
     size = Size;
     A = new List[size];
+<<<<<<< HEAD
 }
 void List::AddElement(string NewWord, string NewMean) {
     int key = HashKey(NewWord);
     A[key].AddNode(NewWord, NewMean);
+=======
+    word = Word;
+}
+
+Hash::HashKey() {
+    int key = 0;
+    for (int i = 0; i < word.size(); i++) {
+        key += (int)word[i];
+    }
+    key /= size;
+    return key;
+>>>>>>> 8c42513df8bf9a9f1083a58769d72b2bd9f11387
 }
