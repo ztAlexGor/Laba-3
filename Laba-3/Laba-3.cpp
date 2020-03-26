@@ -1,5 +1,6 @@
 ﻿#include "Header.h"
 void ReadFile(Hash k);
+void Link();
 
 int main()
 {
@@ -7,6 +8,7 @@ int main()
     Hash Slovarik(2);
     ReadFile(Slovarik);
     Slovarik.PrintTabl();
+    //Link();
     return 0;
 }
 
@@ -28,4 +30,27 @@ void ReadFile(Hash k) {
         i = 0;
     }
     cach.close();
+}
+
+void Link() {
+    cout << "Enter sentence to get definition of words:" << endl;
+    
+    string sentence, word;
+
+    cin >> sentence;
+    
+    for (int i = 0; i < sentence.size(); i++) {
+        if (sentence[i] != ' ' && sentence[i] != ',' && sentence[i] != ':' && sentence[i] != '.')
+            if ((int)sentence[i] >= 97 && (int)sentence[i] <= 122)
+                sentence[i] = (char)((int)sentence[i] - 32);
+            word += sentence[i];
+        else
+            if (!word.empty()) {
+                
+                /////////////////////////////////////////
+                /////////////////////////////////////////
+                /////////////////////////////////////////
+
+            }
+    }
 }
