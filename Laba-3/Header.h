@@ -18,11 +18,13 @@ public:
     void DeleteNode(string DelData);
     void Print();
 };
+
 class Hash {
 private:
 	List* A;
 	int size;
-
+    string word, meaning;
+    int HashKey();
 
 
 public:
