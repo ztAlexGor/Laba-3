@@ -21,13 +21,15 @@ int Hash::HashKey(string word) {
 }
 
 void Hash::NewTabl() {
-    size *= 2;
-
-    List* B = new List[size];
-
-    for (int i = 0; i < size / 2; i++) {
-
+    Hash NewHashTable;
+    for (int i = 0; i < size; i++) {
+        while (!(A[i].isEmpty)) {
+            List::nodePtr LastElem = A[i].LastElement();
+            NewHashTable.AddElement(LastElem->word, LastElem->mean);
+            A[i].DeleteNode(LastElem->word);
+        }
     }
+    this = NewHashTable;
 }
 
 void Hash::PrintTabl() {
