@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 using namespace std;
+struct node;
 
 class List {
 private:
@@ -17,7 +18,7 @@ public:
     void AddNode(string newWord, string NewMean);
     void DeleteNode(string DelWord);
     bool isEmpty();
-    nodePtr LastElement();
+    node* LastElement();
     void Print();
 };
 
