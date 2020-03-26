@@ -44,17 +44,27 @@ void List::Print() {
     cout << endl;
 }
 
-Hash::Hash(int Size, string Word) {
+Hash::Hash(int Size) {
     size = Size;
     A = new List[size];
-    word = Word;
+    score = 0;
 }
 
-Hash::HashKey() {
+Hash::HashKey(string word) {
     int key = 0;
     for (int i = 0; i < word.size(); i++) {
         key += (int)word[i];
     }
     key /= size;
     return key;
+}
+
+Hash::NewTabl() {
+    size *= 2;
+
+    List* B = new List[size];
+
+    for (int i = 0; i < size / 2; i++) {
+
+    }
 }
