@@ -16,6 +16,8 @@ public:
     List();
     void AddNode(string newWord, string NewMean);
     void DeleteNode(string DelWord);
+    bool isEmpty();
+    nodePtr LastElement();
     void Print();
 };
 
