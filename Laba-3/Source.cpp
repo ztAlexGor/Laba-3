@@ -44,9 +44,9 @@ void List::Print() {
     cout << endl;
 }
 
-Hash::Hash(int Size, string Word) {
     size = Size;
     A = new List[size];
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 void List::AddElement(string NewWord, string NewMean) {
@@ -54,14 +54,29 @@ void List::AddElement(string NewWord, string NewMean) {
     A[key].AddNode(NewWord, NewMean);
 =======
     word = Word;
+=======
+    score = 0;
+>>>>>>> 334f81f60fda39f8f7dad217d4694d4bbe2f0bbb
 }
 
-Hash::HashKey() {
     int key = 0;
     for (int i = 0; i < word.size(); i++) {
         key += (int)word[i];
     }
     key /= size;
     return key;
+<<<<<<< HEAD
 >>>>>>> 8c42513df8bf9a9f1083a58769d72b2bd9f11387
+=======
+}
+
+Hash::NewTabl() {
+    size *= 2;
+
+    List* B = new List[size];
+
+    for (int i = 0; i < size / 2; i++) {
+
+    }
+>>>>>>> 334f81f60fda39f8f7dad217d4694d4bbe2f0bbb
 }
