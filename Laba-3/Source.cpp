@@ -47,17 +47,11 @@ void List::Print() {
 Hash::Hash(int Size) {
     size = Size;
     A = new List[size];
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
 void List::AddElement(string NewWord, string NewMean) {
     int key = HashKey(NewWord);
     A[key].AddNode(NewWord, NewMean);
-=======
-    word = Word;
-=======
     score = 0;
->>>>>>> 334f81f60fda39f8f7dad217d4694d4bbe2f0bbb
 }
 
 Hash::HashKey(string word) {
@@ -67,9 +61,6 @@ Hash::HashKey(string word) {
     }
     key /= size;
     return key;
-<<<<<<< HEAD
->>>>>>> 8c42513df8bf9a9f1083a58769d72b2bd9f11387
-=======
 }
 
 Hash::NewTabl() {
@@ -80,5 +71,4 @@ Hash::NewTabl() {
     for (int i = 0; i < size / 2; i++) {
 
     }
->>>>>>> 334f81f60fda39f8f7dad217d4694d4bbe2f0bbb
 }
