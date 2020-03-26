@@ -18,6 +18,7 @@ public:
     void DeleteNode(string DelWord);
     void Print();
 };
+
 class Hash {
 private:
 	List* A;
@@ -28,6 +29,6 @@ private:
 public:
 	Hash(int Size);
     void AddElement(string NewWord, string NewMean);
-
+    void PrintTabl();
 
 };
