@@ -49,7 +49,7 @@ bool List::isEmpty() {
     }
     else return 0;
 }
-nodePtr List::LastElement() {
+node* List::LastElement() {
     curr = head;
     while (curr->next != NULL) {
         curr = curr->next;
