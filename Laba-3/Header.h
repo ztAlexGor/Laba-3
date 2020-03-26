@@ -4,7 +4,10 @@
 #include <string>
 #include <iomanip>
 using namespace std;
+<<<<<<< HEAD
 struct node;
+=======
+>>>>>>> parent of 6bfd880... Update Header.h
 
 class List {
 private:
