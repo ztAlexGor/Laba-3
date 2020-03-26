@@ -6,7 +6,7 @@ class List {
 private:
     typedef struct node {
         string word;
-        string data;
+        string mean;
         node* next;
     }*nodePtr;
     nodePtr head;
@@ -14,8 +14,8 @@ private:
     nodePtr curr;
 public:
     List();
-    void AddNode(string newWord, string NewData);
-    void DeleteNode(string DelData);
+    void AddNode(string newWord, string NewMean);
+    void DeleteNode(string DelWord);
     void Print();
 };
 class Hash {
@@ -27,7 +27,7 @@ private:
 
 public:
 	Hash(int Size);
-
+    void AddElement(string NewWord, string NewMean);
 
 
 };
