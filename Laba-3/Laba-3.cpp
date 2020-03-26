@@ -7,12 +7,13 @@ int main()
     Hash Slovarik(2);
     ReadFile(Slovarik);
     Slovarik.PrintTabl();
+    return 0;
 }
 
 void ReadFile(Hash k) {
     ifstream cach;
     string word, mean;
-    cach.open("test.txt");
+    cach.open("C:\\Users\\lexa3\\OneDrive\\Рабочий стол\\git-playground-master\\nice-project\\Laba-3\\Laba-3\\test.txt");
     while (!cach.eof()) {
         int i = 0;
         getline(cach, mean);
@@ -26,4 +27,5 @@ void ReadFile(Hash k) {
         mean.clear();
         i = 0;
     }
+    cach.close();
 }
