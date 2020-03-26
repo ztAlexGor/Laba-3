@@ -2,6 +2,8 @@
 #include <cstdlib>
 using namespace std;
 
+
+
 class List {
 private:
     typedef struct node {
