@@ -22,8 +22,14 @@ class Hash {
 private:
 	List* A;
 	int size;
+<<<<<<< HEAD
 
 
+=======
+    int score;
+    int HashKey(string word);
+    void NewTabl();
+>>>>>>> 334f81f60fda39f8f7dad217d4694d4bbe2f0bbb
 
 public:
 	Hash(int Size);
