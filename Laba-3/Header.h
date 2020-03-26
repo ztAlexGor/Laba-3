@@ -23,9 +23,9 @@ class Hash {
 private:
 	List* A;
 	int size;
-    string word, meaning;
-    int HashKey();
-
+    int score;
+    int HashKey(string word);
+    void NewTabl();
 
 public:
 	Hash(int Size);
