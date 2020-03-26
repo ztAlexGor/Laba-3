@@ -48,27 +48,36 @@ Hash::Hash(int Size) {
     size = Size;
     A = new List[size];
 }
-void List::AddElement(string NewWord, string NewMean) {
+
+void Hash::AddElement(string NewWord, string NewMean) {
     int key = HashKey(NewWord);
     A[key].AddNode(NewWord, NewMean);
-    score = 0;
+    score++;
 }
 
-Hash::HashKey(string word) {
+int Hash::HashKey(string word) {
     int key = 0;
     for (int i = 0; i < word.size(); i++) {
         key += (int)word[i];
     }
-    key /= size;
+    key = key % size;
     return key;
 }
 
-Hash::NewTabl() {
+void Hash::NewTabl() {
     size *= 2;
 
     List* B = new List[size];
 
     for (int i = 0; i < size / 2; i++) {
 
+    }
+}
+
+void Hash::PrintTabl() {
+    for (int i = 0; i < size; i++) {
+        cout << "Ячейка №" << i + 1 << ": ";
+        A[i].Print();
+        cout << endl;
     }
 }
