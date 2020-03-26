@@ -44,6 +44,7 @@ void List::Print() {
     cout << endl;
 }
 
+Hash::Hash(int Size) {
     size = Size;
     A = new List[size];
 <<<<<<< HEAD
@@ -59,6 +60,7 @@ void List::AddElement(string NewWord, string NewMean) {
 >>>>>>> 334f81f60fda39f8f7dad217d4694d4bbe2f0bbb
 }
 
+Hash::HashKey(string word) {
     int key = 0;
     for (int i = 0; i < word.size(); i++) {
         key += (int)word[i];
