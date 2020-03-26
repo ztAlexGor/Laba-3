@@ -1,8 +1,13 @@
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
+#include <string>
+#include <iomanip>
 using namespace std;
-
-
+<<<<<<< HEAD
+struct node;
+=======
+>>>>>>> parent of 6bfd880... Update Header.h
 
 class List {
 private:
@@ -20,7 +25,7 @@ public:
     void AddNode(string newWord, string NewMean);
     void DeleteNode(string DelWord);
     bool isEmpty();
-    nodePtr LastElement();
+    node* LastElement();
     void Print();
 };
 
