@@ -6,6 +6,7 @@ using namespace std;
 
 class List {
 private:
+    friend class Hash;
     typedef struct node {
         string word;
         string mean;
