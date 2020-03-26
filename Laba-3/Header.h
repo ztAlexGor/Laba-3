@@ -5,8 +5,7 @@ using namespace std;
 class List {
 private:
 	typedef struct node {
-		string word;
-		string data;
+		int data;
 		node* next;
 	}* nodePtr;
 	nodePtr head;
@@ -14,7 +13,24 @@ private:
 	nodePtr curr;
 public:
 	List();
-	void AddNode(string newWord, string NewData);
-	void DeleteNode(string DelData);
+	void AddNode(int NewNode);
+	void DeleteNode(int DelData);
 	void Print();
+};
+
+class Hash {
+private:
+	List* A;
+	int size;
+
+
+
+public:
+	Hash(int Size) {
+		size = Size;
+		A = new List[size];
+	}
+
+
+
 };
