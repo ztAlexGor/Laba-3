@@ -1,7 +1,12 @@
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
+#include <string>
+#include <iomanip>
 using namespace std;
 struct node;
+
+
 
 class List {
 private:
