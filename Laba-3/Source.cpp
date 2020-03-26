@@ -66,6 +66,7 @@ void Hash::AddElement(string NewWord, string NewMean) {
     int key = HashKey(NewWord);
     A[key].AddNode(NewWord, NewMean);
     score++;
+    if (score >= 0.8 * size)NewTabl();
 }
 
 int Hash::HashKey(string word) {
@@ -78,13 +79,17 @@ int Hash::HashKey(string word) {
 }
 
 void Hash::NewTabl() {
-    size *= 2;
-
-    List* B = new List[size];
-
-    for (int i = 0; i < size / 2; i++) {
-
+    List* B = new List[2 * size];
+    for (int i = 0; i < size; i++) {
+        while (!(A[i].isEmpty())) {
+            List::nodePtr LastElem = A[i].LastElement();
+            int key = HashKey(LastElem->word);
+            B[key].AddNode(LastElem->word, LastElem->mean);
+            A[i].DeleteNode(LastElem->word);
+        }
     }
+    A = B;
+    B = NULL;
 }
 
 void Hash::PrintTabl() {
