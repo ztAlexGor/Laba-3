@@ -40,13 +40,13 @@ void Link() {
     cin >> sentence;
     
     for (int i = 0; i < sentence.size(); i++) {
-        if (sentence[i] != ' ' && sentence[i] != ',' && sentence[i] != ':' && sentence[i] != '.')
+        if (sentence[i] != ' ' && sentence[i] != ',' && sentence[i] != ':' && sentence[i] != '.') {
             if ((int)sentence[i] >= 97 && (int)sentence[i] <= 122)
                 sentence[i] = (char)((int)sentence[i] - 32);
             word += sentence[i];
+        }
         else
             if (!word.empty()) {
-                
                 /////////////////////////////////////////
                 /////////////////////////////////////////
                 /////////////////////////////////////////
