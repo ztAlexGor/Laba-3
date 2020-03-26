@@ -5,10 +5,10 @@ List::List() {
     curr = NULL;
     temp = NULL;
 }
-void List::AddNode(string newWord, string NewData) {
+void List::AddNode(string newWord, string NewMean) {
     nodePtr n = new node;
     n->word = newWord;
-    n->data = NewData;
+    n->mean = NewMean;
     n->next = head;
     head = n;
 }
@@ -16,7 +16,7 @@ void List::DeleteNode(string DelWord) {
     nodePtr delPtr = NULL;
     curr = head;
     temp = head;
-    while (curr != NULL && curr->data != DelWord) {
+    while (curr != NULL && curr->mean != DelWord) {
         temp = curr;
         curr = curr->next;
     }
@@ -38,7 +38,7 @@ void List::DeleteNode(string DelWord) {
 void List::Print() {
     curr = head;
     while (curr != NULL) {
-        cout << curr->word << " " << curr->data << endl;
+        cout << curr->word << " " << curr->mean << endl;
         curr = curr->next;
     }
     cout << endl;
@@ -47,4 +47,8 @@ void List::Print() {
 Hash::Hash(int Size) {
     size = Size;
     A = new List[size];
+}
+void List::AddElement(string NewWord, string NewMean) {
+    int key = HashKey(NewWord);
+    A[key].AddNode(NewWord, NewMean);
 }
