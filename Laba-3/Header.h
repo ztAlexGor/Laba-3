@@ -7,6 +7,7 @@ using namespace std;
 
 class List {
 private:
+    friend class Hash;
     typedef struct node {
         string word;
         string mean;
@@ -35,5 +36,4 @@ public:
 	Hash(int Size);
     void AddElement(string NewWord, string NewMean);
     void PrintTabl();
-
 };
