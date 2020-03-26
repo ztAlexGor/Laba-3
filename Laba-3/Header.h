@@ -6,8 +6,6 @@
 using namespace std;
 struct node;
 
-
-
 class List {
 private:
     typedef struct node {
