@@ -22,6 +22,7 @@ public:
     void DeleteNode(string DelWord);
     bool isEmpty();
     nodePtr LastElement();
+    void Search(string Word);
     void Print();
     ~List();
 };
@@ -38,5 +39,5 @@ public:
     ~Hash();
     void AddElement(string NewWord, string NewMean);
     void PrintTabl();
-
+    void Search(string Word);
 };
