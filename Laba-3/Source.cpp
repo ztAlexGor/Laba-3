@@ -43,8 +43,9 @@ void List::Print() {
     while (curr != NULL) {
         cout << curr->word << " " << curr->mean << endl;
         curr = curr->next;
+        cout << endl;
     }
-    cout << endl;
+    
 }
 bool List::isEmpty() {
     if (head == NULL) {
@@ -84,7 +85,6 @@ int Hash::HashKey(string word) {
 }
 
 void Hash::NewTabl() {
-    cout << "ALALALALALLALALALAL" << endl;
     this->size *= 2;
     List* B = new List[this->size];
     for (int i = 0; i < this->size/2; i++) {
@@ -101,11 +101,12 @@ void Hash::NewTabl() {
 }
 
 void Hash::PrintTabl() {
-    cout << this->size << endl;
     for (int i = 0; i < this->size; i++) {
-        cout << "Ячейка №" << i + 1 << ": ";
-        if (A[i].isEmpty())cout << " пуста";
-        else A[i].Print();
+        if (A[i].isEmpty())cout << "Ячейка №" << i + 1 << ": пуста\n"<<endl;
+        else {
+            cout << "Ячейка №" << i + 1 << ":" << endl;
+            A[i].Print();
+        }
         cout << endl;
     }
 }
