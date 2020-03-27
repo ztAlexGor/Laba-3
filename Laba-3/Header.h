@@ -23,6 +23,7 @@ public:
     bool isEmpty();
     nodePtr LastElement();
     void Print();
+    ~List();
 };
 
 class Hash {
@@ -34,6 +35,8 @@ private:
     void NewTabl();
 public:
 	Hash(int Size);
+    ~Hash();
     void AddElement(string NewWord, string NewMean);
     void PrintTabl();
+
 };
