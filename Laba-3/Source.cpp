@@ -60,6 +60,14 @@ List::nodePtr List::LastElement() {
     }
     return curr;
 }
+void List::Search(string Word) {
+    curr = head;
+    while (curr->word != Word && curr != NULL) {
+        curr = curr->next;
+    }
+    if (curr = NULL)cout << "Word " << Word << " not in this list" << endl;
+    else cout << curr->mean << endl;
+}
 
 Hash::Hash(int Size) {
     this->size = Size;
@@ -109,4 +117,9 @@ void Hash::PrintTabl() {
         }
         cout << endl;
     }
+}
+
+void Hash::Search(string Word) {
+    int Search_key = HashKey(Word);
+    Search(Word);
 }
