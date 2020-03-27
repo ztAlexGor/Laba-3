@@ -5,7 +5,7 @@ void Link();
 int main()
 {
     setlocale(LC_ALL, "rus");
-    Hash Slovarik(2);
+    Hash Slovarik(10);
     ReadFile(Slovarik);
     Slovarik.PrintTabl();
     //Link();
@@ -15,7 +15,7 @@ int main()
 void ReadFile(Hash k) {
     ifstream cach;
     string word, mean;
-    cach.open("C:\\Users\\lexa3\\OneDrive\\Рабочий стол\\git-playground-master\\nice-project\\Laba-3\\Laba-3\\test.txt");
+    cach.open("D:\\Учёба\\Проекты с++\\GitHub\\Laba-3\\test.txt");
     while (!cach.eof()) {
         int i = 0;
         getline(cach, mean);
