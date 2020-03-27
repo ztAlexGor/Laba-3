@@ -95,7 +95,7 @@ void Hash::NewTabl() {
             A[i].DeleteNode(LastElem->word);
         }
     }
-    //delete[] A;
+    delete[] A;
     A = B;
     B = NULL;
 }
