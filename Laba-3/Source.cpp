@@ -7,7 +7,7 @@ List::List() {
 }
 List::~List() {
 
-};
+}
 void List::AddNode(string newWord, string NewMean) {
     nodePtr n = new node;
     n->word = newWord;
@@ -61,8 +61,8 @@ List::nodePtr List::LastElement() {
 }
 
 Hash::Hash(int Size) {
-    size = Size;
-    A = new List[size];
+    this->size = Size;
+    A = new List[this->size];
 }
 Hash::~Hash() {
 
@@ -71,7 +71,7 @@ void Hash::AddElement(string NewWord, string NewMean) {
     int key = HashKey(NewWord);
     A[key].AddNode(NewWord, NewMean);
     score++;
-    if (score >= 0.8 * size)NewTabl();
+    if (score >= 0.8 * this->size)NewTabl();
 }
 
 int Hash::HashKey(string word) {
@@ -79,14 +79,15 @@ int Hash::HashKey(string word) {
     for (int i = 0; i < word.size(); i++) {
         key += (int)word[i];
     }
-    key = key % size;
+    key = key % this->size;
     return key;
 }
 
 void Hash::NewTabl() {
-    size *= 2;
-    List* B = new List[size];
-    for (int i = 0; i < size/2; i++) {
+    cout << "ALALALALALLALALALAL" << endl;
+    this->size *= 2;
+    List* B = new List[this->size];
+    for (int i = 0; i < this->size/2; i++) {
         while (!(A[i].isEmpty())) {
             List::nodePtr LastElem = A[i].LastElement();
             int key = HashKey(LastElem->word);
@@ -94,15 +95,16 @@ void Hash::NewTabl() {
             A[i].DeleteNode(LastElem->word);
         }
     }
-    delete[] A;
+    //delete[] A;
     A = B;
     B = NULL;
 }
 
 void Hash::PrintTabl() {
-    for (int i = 0; i < size; i++) {
+    cout << this->size << endl;
+    for (int i = 0; i < this->size; i++) {
         cout << "Ячейка №" << i + 1 << ": ";
-        if (A[i].isEmpty())cout << "Ячейка №" << i+1 << " пуста";
+        if (A[i].isEmpty())cout << " пуста";
         else A[i].Print();
         cout << endl;
     }
