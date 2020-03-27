@@ -5,9 +5,9 @@ void Link();
 int main()
 {
     setlocale(LC_ALL, "rus");
-    Hash Slovarik(10);
+    Hash Slovarik(3);
     ReadFile(Slovarik);
-    Slovarik.PrintTabl();
+    
     return 0;
 }
 
@@ -28,6 +28,7 @@ void ReadFile(Hash k) {
         mean.clear();
         i = 0;
     }
+    k.PrintTabl();
     cach.close();
 }
 
