@@ -8,7 +8,6 @@ int main()
     Hash Slovarik(10);
     ReadFile(Slovarik);
     Slovarik.PrintTabl();
-    //Link();
     return 0;
 }
 
@@ -23,7 +22,7 @@ void ReadFile(Hash k) {
             word += mean[i];
             i++;
         }
-        mean.erase(0, i);
+        mean.erase(0, i + 1);
         k.AddElement(word, mean);
         word.clear();
         mean.clear();
