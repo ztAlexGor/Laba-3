@@ -79,8 +79,9 @@ int Hash::HashKey(string word) {
 }
 
 void Hash::NewTabl() {
-    List* B = new List[2 * size];
-    for (int i = 0; i < size; i++) {
+    size *= 2;
+    List* B = new List[size];
+    for (int i = 0; i < size/2; i++) {
         while (!(A[i].isEmpty())) {
             List::nodePtr LastElem = A[i].LastElement();
             int key = HashKey(LastElem->word);
