@@ -7,7 +7,6 @@ int main()
     setlocale(LC_ALL, "rus");
     Hash Slovarik(3);
     ReadFile(Slovarik);
-    
     return 0;
 }
 
