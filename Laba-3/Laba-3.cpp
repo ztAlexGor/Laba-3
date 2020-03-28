@@ -15,7 +15,7 @@ int main()
 void ReadFile(Hash *k) {
     ifstream cach;
     string word, mean;
-    cach.open("C:\\Users\\lexa3\\OneDrive\\Рабочий стол\\git-playground-master\\nice-project\\Laba-3\\Laba-3\\test.txt");
+    cach.open("d:\\Учёба\\Файлы общего доступа\\test.txt");
     while (!cach.eof()) {
         int i = 0;
         getline(cach, mean);
