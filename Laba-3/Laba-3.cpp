@@ -5,9 +5,9 @@ void Link(Hash *k);
 int main()
 {
     setlocale(LC_ALL, "rus");
-    Hash Slovarik(3);
+    Hash Slovarik(1000);
     ReadFile(&Slovarik);
-    Slovarik.PrintTabl();
+    //Slovarik.PrintTabl();
     Link(&Slovarik);
     return 0;
 }
@@ -15,7 +15,7 @@ int main()
 void ReadFile(Hash *k) {
     ifstream cach;
     string word, mean;
-    cach.open("D:\\Учёба\\Файлы общего доступа\\test.txt");
+    cach.open("D:\\Учёба\\Файлы общего доступа\\boom.txt");
     while (!cach.eof()) {
         int i = 0;
         getline(cach, mean);
@@ -46,10 +46,10 @@ void Link(Hash *k) {
                 sentence[i] = (char)((int)sentence[i] - 32);
             word += sentence[i];
         }
-        else
-            if (!word.empty()) {
-                (*k).Search(word);
-                word.clear();
-            }
+        else if (!word.empty()) {
+              (*k).Search(word);
+              word.clear();
+              cout << endl;
+        }
     }
 }
