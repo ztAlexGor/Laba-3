@@ -96,6 +96,7 @@ int Hash::HashKey(string word) {
     for (int i = 0; i < word.size(); i++) {
         key += (int)word[i];
     }
+    key *= word.size();
     key = key % this->size;
     return key;
 }
