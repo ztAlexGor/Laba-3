@@ -12,7 +12,7 @@ int main()
     return 0;
 }
 
-void ReadFile(Hash *k) {
+void ReadFile(Hash* k) {
     ifstream cach;
     string word, mean;
     cach.open("D:\\Учёба\\Файлы общего доступа\\boom.txt");
@@ -23,11 +23,18 @@ void ReadFile(Hash *k) {
             word += mean[i];
             i++;
         }
-        cach.close();
+        mean.erase(0, i + 1);
+        (*k).AddElement(word, mean);
+        word.clear();
+        mean.clear();
+        i = 0;
+    }
+    cach.close();
 }
 
 void Link(Hash *k) {
     bool z = true;
+    char q;
     while (z) {
         cout << "Enter sentence to get definition of words:" << endl;
         string sentence, word;
@@ -50,7 +57,9 @@ void Link(Hash *k) {
                 }
         }
         cout << "Enter \"0\" to exit." << endl << "Enter \"1\" to enter one more sentence.";
-        z = (bool)_getch();
+        q = _getch();
         system("cls");
+        if (q == '0')
+            z = false;
     }
 }
