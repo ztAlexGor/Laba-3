@@ -1,7 +1,6 @@
 ﻿#include "Header.h"
 void ReadFile(Hash *k);
-
-void Link();
+void Link(Hash *k);
 
 int main()
 {
@@ -9,13 +8,14 @@ int main()
     Hash Slovarik(3);
     ReadFile(&Slovarik);
     Slovarik.PrintTabl();
+    Link(&Slovarik);
     return 0;
 }
 
 void ReadFile(Hash *k) {
     ifstream cach;
     string word, mean;
-    cach.open("C:\\Users\\lexa3\\OneDrive\\Рабочий стол\\git-playground-master\\nice-project\\Laba-3\\Laba-3\\test.txt");
+    cach.open("D:\\Учёба\\Файлы обего доступа\\test.txt");
     while (!cach.eof()) {
         int i = 0;
         getline(cach, mean);
@@ -32,12 +32,13 @@ void ReadFile(Hash *k) {
     cach.close();
 }
 
-void Link() {
+void Link(Hash *k) {
     cout << "Enter sentence to get definition of words:" << endl;
     
     string sentence, word;
 
-    cin >> sentence;
+    getline (cin, sentence);
+    sentence += '.';
     
     for (int i = 0; i < sentence.size(); i++) {
         if (sentence[i] != ' ' && sentence[i] != ',' && sentence[i] != ':' && sentence[i] != '.') {
@@ -47,10 +48,8 @@ void Link() {
         }
         else
             if (!word.empty()) {
-                /////////////////////////////////////////
-                /////////////////////////////////////////
-                /////////////////////////////////////////
-
+                (*k).Search(word);
+                word.clear();
             }
     }
 }
