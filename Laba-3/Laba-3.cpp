@@ -1,16 +1,17 @@
 ﻿#include "Header.h"
-void ReadFile(Hash k);
+void ReadFile(Hash *k);
 void Link();
 
 int main()
 {
     setlocale(LC_ALL, "rus");
     Hash Slovarik(3);
-    ReadFile(Slovarik);
+    ReadFile(&Slovarik);
+    Slovarik.PrintTabl();
     return 0;
 }
 
-void ReadFile(Hash k) {
+void ReadFile(Hash *k) {
     ifstream cach;
     string word, mean;
     cach.open("D:\\Учёба\\Проекты с++\\GitHub\\Laba-3\\test.txt");
@@ -22,12 +23,11 @@ void ReadFile(Hash k) {
             i++;
         }
         mean.erase(0, i + 1);
-        k.AddElement(word, mean);
+        (*k).AddElement(word, mean);
         word.clear();
         mean.clear();
         i = 0;
     }
-    k.PrintTabl();
     cach.close();
 }
 
