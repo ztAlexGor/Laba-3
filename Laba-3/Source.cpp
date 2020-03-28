@@ -70,10 +70,10 @@ List::nodePtr List::LastElement() {
 }
 void List::Search(string Word) {
     curr = head;
-    while (curr->word != Word && curr != NULL) {
+    while (curr != NULL && curr->word != Word) {
         curr = curr->next;
     }
-    if (curr == NULL)cout << "Word " << Word << "is not in this list" << endl;
+    if (curr == NULL)cout << "Word " << Word << " is not in this list" << endl;
     else cout << curr->mean << endl;
 }
 
@@ -94,7 +94,7 @@ void Hash::AddElement(string NewWord, string NewMean) {
 int Hash::HashKey(string word) {
     int key = 0;
     for (int i = 0; i < word.size(); i++) {
-        key += (int)word[i] * (i + 1) * (i + 2);
+        key += (int)word[i]*(i+1)*(i + 1);
     }
     key *= word.size();
     key = key % this->size;
