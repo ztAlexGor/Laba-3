@@ -56,7 +56,7 @@ void Link(Hash *k) {
                     cout << endl;
                 }
         }
-        cout << "Enter \"0\" to exit." << endl << "Enter \"1\" to enter one more sentence.";
+        cout << "Enter \"0\" to exit." << endl << "Enter \"1\" to enter one more sentence.\n";
         q = _getch();
         system("cls");
         if (q == '0')
