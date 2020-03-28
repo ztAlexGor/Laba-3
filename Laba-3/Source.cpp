@@ -70,7 +70,7 @@ List::nodePtr List::LastElement() {
 }
 void List::Search(string Word) {
     curr = head;
-    while (curr->word != Word && curr != NULL) {
+    while (curr != NULL && curr->word != Word) {
         curr = curr->next;
     }
     if (curr == NULL)cout << "Word " << Word << " not in this list" << endl;
