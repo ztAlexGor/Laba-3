@@ -82,7 +82,7 @@ Hash::Hash(int Size) {
     A = new List[this->size];
 }
 Hash::~Hash() {
-
+    delete[] A;
 }
 void Hash::AddElement(string NewWord, string NewMean) {
     int key = HashKey(NewWord);
@@ -96,7 +96,8 @@ int Hash::HashKey(string word) {
     for (int i = 0; i < word.size(); i++) {
         key += (int)word[i];
     }
-    key = (key*word.size()) % this->size;
+    key *= word.size();
+    key = key % this->size;
     return key;
 }
 

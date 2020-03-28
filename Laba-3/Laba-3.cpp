@@ -13,21 +13,15 @@ int main()
 }
 
 void ReadFile(Hash *k) {
-        ifstream cach;
-        string word, mean;
-        cach.open("D:\\Учёба\\Файлы общего доступа\\boom.txt");
-        while (!cach.eof()) {
-            int i = 0;
-            getline(cach, mean);
-            while (mean[i] != ';') {
-                word += mean[i];
-                i++;
-            }
-            mean.erase(0, i + 1);
-            (*k).AddElement(word, mean);
-            word.clear();
-            mean.clear();
-            i = 0;
+    ifstream cach;
+    string word, mean;
+    cach.open("D:\\Учёба\\Файлы общего доступа\\boom.txt");
+    while (!cach.eof()) {
+        int i = 0;
+        getline(cach, mean);
+        while (mean[i] != ';') {
+            word += mean[i];
+            i++;
         }
         cach.close();
 }
@@ -36,7 +30,6 @@ void Link(Hash *k) {
     bool z = true;
     while (z) {
         cout << "Enter sentence to get definition of words:" << endl;
-
         string sentence, word;
 
         getline(cin, sentence);
