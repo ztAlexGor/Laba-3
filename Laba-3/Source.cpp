@@ -121,5 +121,5 @@ void Hash::PrintTabl() {
 
 void Hash::Search(string Word) {
     int Search_key = HashKey(Word);
-    Search(Word);
+    A[Search_key].Search(Word);
 }
