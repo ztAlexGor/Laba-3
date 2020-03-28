@@ -5,7 +5,7 @@ void Link(Hash *k);
 int main()
 {
     setlocale(LC_ALL, "rus");
-    Hash Slovarik(1000);
+    Hash Slovarik(32000);
     ReadFile(&Slovarik);
     //Slovarik.PrintTabl();
     Link(&Slovarik);
