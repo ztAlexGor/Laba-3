@@ -73,7 +73,7 @@ void List::Search(string Word) {
     while (curr->word != Word && curr != NULL) {
         curr = curr->next;
     }
-    if (curr = NULL)cout << "Word " << Word << " not in this list" << endl;
+    if (curr == NULL)cout << "Word " << Word << " not in this list" << endl;
     else cout << curr->mean << endl;
 }
 
@@ -82,7 +82,7 @@ Hash::Hash(int Size) {
     A = new List[this->size];
 }
 Hash::~Hash() {
-
+    delete[] A;
 }
 void Hash::AddElement(string NewWord, string NewMean) {
     int key = HashKey(NewWord);
