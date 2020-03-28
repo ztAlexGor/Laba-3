@@ -6,7 +6,15 @@ List::List() {
     temp = NULL;
 }
 List::~List() {
-
+    while (head != NULL) {
+        curr = head;
+        while (curr->next != NULL) {
+            curr = curr->next;
+        }
+        DeleteNode(curr->word);
+    }
+    temp = NULL;
+    curr = NULL;
 }
 void List::AddNode(string newWord, string NewMean) {
     nodePtr n = new node;
