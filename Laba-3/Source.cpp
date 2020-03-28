@@ -73,7 +73,7 @@ void List::Search(string Word) {
     while (curr->word != Word && curr != NULL) {
         curr = curr->next;
     }
-    if (curr = NULL)cout << "Word " << Word << " not in this list" << endl;
+    if (curr == NULL)cout << "Word " << Word << " not in this list" << endl;
     else cout << curr->mean << endl;
 }
 
@@ -96,7 +96,7 @@ int Hash::HashKey(string word) {
     for (int i = 0; i < word.size(); i++) {
         key += (int)word[i];
     }
-    key = key % this->size;
+    key = (key*word.size()) % this->size;
     return key;
 }
 
