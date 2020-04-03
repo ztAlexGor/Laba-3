@@ -70,11 +70,15 @@ List::nodePtr List::LastElement() {
 }
 void List::Search(string Word) {
     curr = head;
-    while (curr != NULL && curr->word != Word) {
+    bool u = false;
+    while (curr != NULL) {
+        if (curr->word == Word) {
+            cout << curr->mean << endl;
+            u = true;
+        }
         curr = curr->next;
     }
-    if (curr == NULL)cout << "Word " << Word << " is not in this list" << endl;
-    else cout << curr->mean << endl;
+    if (u = false)cout << "Word " << Word << " is not in this list" << endl;
 }
 
 Hash::Hash(int Size) {
