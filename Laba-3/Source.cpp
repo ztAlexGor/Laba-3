@@ -73,7 +73,7 @@ void List::Search(string Word) {
     bool u = false;
     while (curr != NULL) {
         if (curr->word == Word) {
-            cout << curr->mean << endl;
+            cout << curr->mean << endl << endl;
             u = true;
         }
         curr = curr->next;
