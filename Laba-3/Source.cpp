@@ -78,7 +78,7 @@ void List::Search(string Word) {
         }
         curr = curr->next;
     }
-    if (u=false)cout << "Word " << Word << " is not in this list" << endl;
+    if (u == false)cout << "Word " << Word << " is not in this list" << endl;
 }
 
 Hash::Hash(int Size) {
